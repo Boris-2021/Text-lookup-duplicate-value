@@ -1,0 +1,11 @@
+
+data_processor:
+  input_file: '样例.xlsx'  # 输入文件路径，文件名
+  sheet_name: 'Sheet1'   # 输入xlsx中的Sheet名
+#  output_file: 'processed_data.xlsx'  # 将文件规范化的结果输出,如果不想输出文件，就将该配置注释掉
+
+data_cluster:
+  output_file: 'output_path.xlsx'  # 数据聚和后的文件保存位置和名称
+  columns: [ 'label', 'review' ]  # 需要以那些字段进行相似性比较
+  threshold: 0.8  # 相似性阈值： 表示将相似度超过多少的样本聚合在一块 (在开启分词模式的情况下阈值建议0.5-0.8。不开分词的情况下阈值建议0.8以上。具体情况需要结合结果分析)
+  isjieba: False
